@@ -1,0 +1,12 @@
+%h1 Registration Test
+%hr
+
+%ul
+  %li style users/registrators/new.html.haml to match the #{link_to 'Illustrator file', 'http://bit.ly/registrationTest', target: '_blank'}
+  %li hint: do a project wide search for "to do". Most of the files are ready for you.
+  %li message me with any questions
+  %li submit a pull request
+
+- if current_user.present?
+  %hr
+  = link_to "Log out", destroy_user_session_path, method: :delete

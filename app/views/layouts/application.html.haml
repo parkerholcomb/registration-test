@@ -1,0 +1,15 @@
+!!!
+%html
+  %head
+    %title RegistrationTest
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
+    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    = csrf_meta_tags
+  %body
+    = render 'layouts/application_header'
+
+    -# TODO render flash messages partial
+
+    = yield
+
+    -# TODO add footer
