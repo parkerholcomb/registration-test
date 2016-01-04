@@ -10,4 +10,21 @@ To apply
 
 * Send a PR when complete
 
-Email me with any questions. Thanks!
+Thanks!
+
+== FULL PROJECT NOTES
+
+If we end up working together we will be finishing a responsive website with aApproximately 15 different views including:
+Landing page
+Order process (~4 screens)
+My account (~4 screens)
+
+All of the views already are available as Illustrator files and exist as HAML files in the Rails app. We just need to polish the styling, custom form elements, etc.
+
+Example: bit.ly/registrationTestSupportingDoc
+
+Need to complete ASAP/mid-January.
+
+It will be just you and me working together. No non-technical project managers :) 
+
+Email me with any questions parker.holcomb at gmail.com.
