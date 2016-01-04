@@ -9,3 +9,5 @@ To apply
 * See complete instructions on landing.html.haml
 
 * Send a PR when complete
+
+Email me with any questions. Thanks!
