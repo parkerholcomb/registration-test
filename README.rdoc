@@ -2,7 +2,7 @@
 
 To apply
 
-* Clone this repo
+* Fork this repo
 
 * Style 'users/registration/new.html.haml' to match this design file http://bit.ly/registrationTest
 
@@ -14,7 +14,7 @@ Thanks!
 
 == FULL PROJECT NOTES
 
-If we end up working together we will be finishing a responsive website with aApproximately 15 different views including:
+If we end up working together we will be finishing a responsive website with approximately 7 different views including:
 - Landing page
 - Order process (~4 screens)
 - My account (~4 screens)
