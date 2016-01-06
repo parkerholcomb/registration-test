@@ -10,16 +10,17 @@
     -# TODO_2 render flash messages partial
     -# flash header image: https://www.evernote.com/l/ACK-o6md935HiKUUDeHBEZYBFyiXSnRQy2Q
     .container
-      - if flash[:error].present?
-        .alert.alert-danger.fade.in
-          %strong Error! #{flash[:error]}
+      #flash-message
+        - if flash[:error].present?
+          .alert.alert-danger.fade.in
+            %strong Error! #{flash[:error]}
 
-      - if flash[:notice].present?
-        .alert.alert-success.fade.in
-          = flash[:notice]
+        - if flash[:notice].present?
+          .alert.alert-success.fade.in
+            = flash[:notice]
 
-      - if flash[:alert].present?
-        .alert.alert-warning.fade.in
-          %strong Warning! #{flash[:alert]}
+        - if flash[:alert].present?
+          .alert.alert-warning.fade.in
+            %strong Warning! #{flash[:alert]}
 
       = yield
