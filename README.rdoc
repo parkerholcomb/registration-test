@@ -28,3 +28,12 @@ Need to complete ASAP/mid-January.
 It will be just you and me working together. No non-technical project managers :)
 
 Email me with any questions parker.holcomb at gmail.com.
+
+
+== HOW TO FIX CONFIG ERRORS
+
+- When `bundle install` in El Capitan, following error could happen.
+    gem eventmachine fatal error: 'openssl/ssl.h' file not found
+
+  Try this:
+    gem install eventmachine -- --with-cppflags=-I/usr/local/opt/openssl/include
