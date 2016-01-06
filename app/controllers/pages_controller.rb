@@ -39,7 +39,7 @@ class PagesController < ApplicationController
 
   def request_params
     params.require(:request).permit(:name, :comment,
-                          location_attributes: [:style, :address_1, :apartment_number, :zip, :request_id])
+                          location_attributes: [:style, :address_1, :request_id])
   end
 
 end
