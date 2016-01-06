@@ -14,3 +14,11 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree ./application/
+
+$(document).ajaxError(function(event, request) {
+    var msg = request.responseJSON.error;
+
+    if (msg) {
+        $("#flash-message").html('<div class="alert alert-danger fade in"><strong>Error!</strong> ' + msg + '</div>');
+    }
+});

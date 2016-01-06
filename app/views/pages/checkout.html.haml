@@ -12,41 +12,58 @@
 
 
 
-.col-md-10
-  = form_for @request, url: process_checkout_path do |f|
+.checkout
 
-    = f.label :name
-    = f.text_field :name
-    = f.fields_for :location, Location.new do |l|
-      = l.label :style
-      = l.select :style, Location::STYLES
-      = l.label :address
-      = l.text_field :address_1
-      = l.label :apartment_number
-      = l.text_field :apartment_number
-      = l.label :zip
-      = l.text_field :zip
-    = f.label :special_instructions
-    = f.text_area :comment
+  .left-pane
+    = simple_form_for @request, url: process_checkout_path do |f|
 
+      = f.input :name, label: 'Student\'s name', label_html: {class: 'display-block'}, wrapper_html: {class: 'row col-sm-8'}
+      = f.fields_for :location, Location.new do |l|
+        .row.col-sm-8
+          %label.display-block Location Type
+          = l.select :style, Location::STYLES
 
-  %hr
-  %h4 Payment Information
-  %p Please note, you will not be charged until after the session. If you’re unsatisfied with your experience, there’s a money-back guarantee.
+        .row
+          = l.input :address_1, label: 'Address', label_html: {class: 'display-block'}, wrapper_html: {class: 'col-sm-8'}
+          = l.input :apartment_number, label: 'Apt # (If Applicable)', label_html: {class: 'display-block'}, wrapper_html: {class: 'col-sm-4'}
 
-  = form_tag process_card_path, method: :post, id: 'payment-form' do
-    = label_tag 'Card Number'
-    = text_field_tag :number, nil, {'data-stripe' => 'number', class: 'form-control'}
-    = label_tag 'Expiration'
-    = select_tag :exp_month, options_for_select(@months, Date.today.month), {'data-stripe' => 'exp_month'}
-    = select_tag :exp_year, options_for_select(@next_ten_years), {'data-stripe' => 'exp_year'}
-    = label_tag 'CVV'
-    = text_field_tag :cvv, nil, {'data-stripe' => 'cvv'}
+        .row
+          = l.input :zip, label: 'Zip Code', label_html: {class: 'display-block'}, wrapper_html: {class: 'col-sm-4'}
+          .col-sm-8.save-address-box
+            %label Save Address
+            = f.input_field :save_address, as: :boolean, class: 'initial-width'
+
+      .row
+        .col-sm-12
+          %label.display-block Special Instructions(Optional)
+          = f.text_area :comment, class: 'col-sm-12'
 
 
-.col-md-2
+    %hr
+    %h4 Payment Information
+    %p Please note, you will not be charged until after the session. If you’re unsatisfied with your experience, there’s a money-back guarantee.
 
-  .div Grade #{@grade}
+    = form_tag process_card_path, method: :post, id: 'payment-form' do
+      .row
+        .col-sm-8
+          %label.display-block Card Number
+          = text_field_tag :number, nil, {'data-stripe' => 'number', class: 'form-control'}
+      .row
+        .col-sm-8
+          %label.display-block Expiration
+          .col-sm-6
+            = select_tag :exp_month, options_for_select(@months, Date.today.month), {'data-stripe' => 'exp_month'}
+          .col-sm-6
+            = select_tag :exp_year, options_for_select(@next_ten_years), {'data-stripe' => 'exp_year'}
+        .col-sm-4
+          = label_tag 'CVV'
+          = text_field_tag :cvv, nil, {'data-stripe' => 'cvv'}
 
-  -# go look at base.js.coffee. The action starts there :)
-  .btn.btn-primary.btn-block#checkout Complete Booking
+  .right-pane
+
+    .div Grade #{@grade}
+
+    -# go look at base.js.coffee. The action starts there :)
+    .btn.btn-primary.btn-block#checkout Complete Booking
+
+

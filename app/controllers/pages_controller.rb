@@ -11,6 +11,8 @@ class PagesController < ApplicationController
 
     @next_ten_years = (2016..2026).to_a
     @months = (1..12).to_a
+
+    flash[:notice] = 'Welcome to checkout page'
   end
 
   def process_checkout
@@ -18,7 +20,7 @@ class PagesController < ApplicationController
     if @request.save
       # launch the modal
     else
-      # TODO_2 if displays flash notice
+      flash[:error] = 'Checkout Failed'
     end
     redirect_to :back
   end
