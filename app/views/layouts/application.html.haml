@@ -9,7 +9,24 @@
     = render 'layouts/application_header'
 
     -# TODO render flash messages partial
+    = render 'shared/flash'
 
     = yield
 
     -# TODO add footer
+
+    %footer.footer
+      © 2015 Company Inc
+      %ul.nav.navbar-nav.navbar-right.nav-social
+        %li
+          %a
+            %i.circle-icon{:class=>"glyphicon glyphicon-user"}
+        %li
+          %a
+            %i.circle-icon{:class=>"glyphicon glyphicon-user"}
+        %li
+          %a
+            %i.circle-icon{:class=>"glyphicon glyphicon-user"}
+        %li
+          %a
+            %i.circle-icon{:class=>"glyphicon glyphicon-user"}
