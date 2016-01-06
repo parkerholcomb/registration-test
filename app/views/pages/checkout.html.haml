@@ -1,0 +1,50 @@
+-# style this page to match the design file
+-# https://www.dropbox.com/s/zv1ew9qym7ivntk/checkout_shared.ai?dl=0
+-# do as much as you can within two hours
+-# ignore header and footer for now
+-# the more commits the better
+-# details matter
+-# commenting doesn't hurt either
+-# submit a PR when complete
+
+-# hint, do a project wide search for "todo"
+
+
+.col-md-10
+  = form_for @request, url: process_checkout_path do |f|
+
+    = f.label :name
+    = f.text_field :name
+    = f.fields_for :location, Location.new do |l|
+      = l.label :style
+      = l.select :style, Location::STYLES
+      = l.label :address
+      = l.text_field :address_1
+      = l.label :apartment_number
+      = l.text_field :apartment_number
+      = l.label :zip
+      = l.text_field :zip
+    = f.label :special_instructions
+    = f.text_area :comment
+
+
+  %hr
+  %h4 Payment Information
+  %p Please note, you will not be charged until after the session. If you’re unsatisfied with your experience, there’s a money-back guarantee.
+
+  = form_tag process_card_path, method: :post, id: 'payment-form' do
+    = label_tag 'Card Number'
+    = text_field_tag :number, nil, {'data-stripe' => 'number', class: 'form-control'}
+    = label_tag 'Expiration'
+    = select_tag :exp_month, options_for_select(@months, Date.today.month), {'data-stripe' => 'exp_month'}
+    = select_tag :exp_year, options_for_select(@next_ten_years), {'data-stripe' => 'exp_year'}
+    = label_tag 'CVV'
+    = text_field_tag :cvv, nil, {'data-stripe' => 'cvv'}
+
+
+.col-md-2
+
+  .div Grade #{@grade}
+
+  -# go look at base.js.coffee. The action starts there :)
+  .btn.btn-primary.btn-block#checkout Complete Booking

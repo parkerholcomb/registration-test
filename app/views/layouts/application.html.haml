@@ -7,9 +7,7 @@
     = csrf_meta_tags
   %body
     = render 'layouts/application_header'
-
-    -# TODO render flash messages partial
-
-    = yield
-
-    -# TODO add footer
+    -# TODO_2 render flash messages partial
+    -# flash header image: https://www.evernote.com/l/ACK-o6md935HiKUUDeHBEZYBFyiXSnRQy2Q
+    .container
+      = yield
