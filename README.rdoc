@@ -4,7 +4,7 @@ To apply
 
 * Fork this repo
 
-* Style 'users/registration/new.html.haml' to match this design file http://bit.ly/registrationTest
+* Style checkout to match this design file
 
 * See complete instructions on landing.html.haml
 
