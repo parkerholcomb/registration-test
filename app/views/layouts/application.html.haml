@@ -8,8 +8,27 @@
   %body
     = render 'layouts/application_header'
 
+  .body-container
     -# TODO render flash messages partial
+    .flash-bar
+      .flash-shade
 
     = yield
 
     -# TODO add footer
+  %footer.footer-bar
+    .container
+      .footer-bar-padding-top
+        .col-xs-6
+          .text-left
+            ©2015 Company Inc
+        .col-xs-6
+          .text-right
+            = link_to("#") do
+              =image_tag "facebook.png", size: "25x25"
+            = link_to("#") do
+              =image_tag "twitter.png", size: "25x25"
+            = link_to("#") do
+              =image_tag "linkedin.png", size: "25x25"
+            = link_to("#") do
+              =image_tag "youtube.png", size: "25x25"
