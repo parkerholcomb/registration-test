@@ -1,3 +1,109 @@
 @import 'bootstrap';
 
 // TODO
+a.header-logo{
+  font-size: 27px !important;
+  font-weight: bold !important;
+  color: #000000 !important;
+}
+
+.navbar {
+  background-color: #ffffff !important;
+  margin-bottom: 0px !important;
+}
+
+.navbar ul li .btn{
+  margin-top: 10px;
+  margin-right: 47px;
+
+}
+@media only screen and (max-width : 768px) {
+  .navbar-collapse.collapse.in ul {
+    border: #A9A3A3;
+    border-color: #A9A3A3;
+    border-width: 1px;
+    border-style: solid;
+  }
+}
+
+.navbar-toggle {
+  border-color: #000 !important;
+}
+
+.icon-bar {
+  background: #000;
+}
+
+.body-container {
+  z-index: -1;
+  position: absolute;
+  width: 100%;
+  top: 60px;
+
+}
+.flash-bar {
+  height:50px;
+  background-color: #ececec;
+}
+.flash-shade{
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#000000+0,000000+100&0.65+0,0+100;Neutral+Density */
+  background: -moz-linear-gradient(top,  rgba(0,0,0,0.65) 0%, rgba(0,0,0,0) 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top,  rgba(0,0,0,0.65) 0%,rgba(0,0,0,0) 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom,  rgba(0,0,0,0.65) 0%,rgba(0,0,0,0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6000000', endColorstr='#00000000',GradientType=0 ); /* IE6-9 */
+  height: 5px;
+}
+html,body{
+  height: 100%
+}
+
+.footer-bar {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background-color: #000000;
+  height: 80px;
+}
+
+.footer-bar-padding-top {
+  padding-top: 30px;
+  color: #fff;
+}
+
+.login-form {
+  margin-top: 30px;
+}
+
+.login-form-top-right-text {
+  padding-top: 10px;
+}
+
+.rect-button {
+  border-radius:0 !important;
+}
+
+.login-button {
+  padding-top:20px;
+}
+
+.form-inputs .input {
+  padding-top: 10px;
+}
+
+.form-inputs .input input {
+  width: 100% !important;
+}
+
+
+.right-inner-addon {
+  position: relative;
+}
+.right-inner-addon input {
+  padding-right: 30px;
+}
+.right-inner-addon i {
+  position: absolute;
+  right: 0px;
+  padding: 19px 12px;
+  pointer-events: none;
+}

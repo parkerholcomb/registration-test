@@ -1,16 +1,29 @@
-%nav.navbar.navbar-default
+.navbar
   .container-fluid
     / Brand and toggle get grouped for better mobile display
     .navbar-header
-      %button.navbar-toggle.collapsed{"aria-expanded" => "false", "data-target" => "#bs-example-navbar-collapse-1", "data-toggle" => "collapse", :type => "button"}
-        %span.sr-only Toggle navigation
+      %button.navbar-toggle{"aria-expanded" => "false", "data-toggle"=>"collapse", "data-target"=>".navbar-collapse", :type => "button"}
+        %span.icon-bar
+        %span.icon-bar
+        %span.icon-bar
 
-      .navbar-brand= link_to "Brand Logo", root_path
+      = link_to "Brand Logo", root_path, :class => "navbar-brand header-logo"
     .collapse.navbar-collapse
 
       %ul.nav.navbar-nav.navbar-right
+        %li
+          = button_to 'Become a tutor', "", {:class => 'btn btn-success'}
+        %li
+          = link_to("#") do
+            =image_tag "info.png", size: "25x25"
+        %li
+          = link_to("#") do
+            =image_tag "phone.png", size: "25x25"
+        %li
+          = link_to("#") do
+            =image_tag "mail.png", size: "25x25"
         - if current_user
           %li= link_to "Log out", destroy_user_session_path, method: :delete
         - else
           %li= link_to "Sign up", new_user_registration_path
-          %li= link_to "Sign in", new_user_session_path
+          %li= link_to "Log in", new_user_session_path
