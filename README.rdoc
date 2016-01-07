@@ -12,6 +12,8 @@ To apply
 
 Thanks!
 
+P.S. Please do not spend all day on this (1-2 hours max). I understand that it might not be 100% complete. 
+
 == FULL PROJECT NOTES
 
 If we end up working together we will be finishing a responsive website with approximately 7 different views including:
