@@ -1,3 +1,255 @@
+@import 'bootstrap-sprockets';
 @import 'bootstrap';
 
-// TODO
+@font-face {
+    font-family: 'ProximaNova';
+    src:url(asset-path('fonts/proximanova-regular.eot'));
+    src:url(asset-path('fonts/proximanova-regular.eot?#iefix')),
+        url(asset-path('fonts/proximanova-regular.eot?#iefix')) format('embedded-opentype'),
+        url(asset-path('fonts/proximanova-regular.ttf')) format('truetype'),
+        url(asset-path('fonts/proximanova-regular.woff')) format('woff'),
+        url(asset-path('fonts/proximanova-regular.svg#icofonts')) format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'ProximaNovaBold';
+    src:url(asset-path('fonts/ProximaNovaBold.eot'));
+    src:url(asset-path('fonts/ProximaNovaBold.eot?#iefix')) format('embedded-opentype'),
+        url(asset-path('fonts/ProximaNovaBold.ttf')) format('truetype'),
+        url(asset-path('fonts/ProximaNovaBold.woff')) format('woff'),
+        url(asset-path('fonts/ProximaNovaBold.svg#icofonts')) format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'FiraSansBold';
+    src:url(asset-path('fonts/FiraSansBold.eot'));
+    src:url(asset-path('fonts/FiraSansBold.eot?#iefix')) format('embedded-opentype'),
+        url(asset-path('fonts/FiraSansBold.ttf')) format('truetype'),
+        url(asset-path('fonts/FiraSansBold.woff')) format('woff'),
+        url(asset-path('fonts/FiraSansBold.svg#icofonts')) format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    font-family: 'ProximaNova';
+    min-width: 1024px;
+}
+
+.reg-form-wrap {
+    border: 1px solid #d0d0d0;
+    width: 380px;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 40px;
+    padding-bottom: 45px;
+    float: none;
+    margin: 0 auto;
+    margin-top: 40px;
+    font-size: 16px;
+    .form-control {
+      font-size: 16px;
+    }
+    .btn {
+      border-radius: 0px;
+    }
+
+    input {
+      border-radius: 0px;
+      border: 1px solid #D2D2D2;
+    }
+    .field_with_errors {
+      input {
+        border: 1px solid red;
+      }
+      span.error {
+        color: red;
+      }
+    }
+}
+
+.form-header {
+    margin-bottom: 25px;
+    overflow: hidden;
+    h2 {
+        font-size: 18px;
+        float: left;
+        display: inline-block;
+        font-family: ProximaNovaBold;
+        margin: 0;
+    }
+    span {
+        float: right;
+    }
+    a {
+        color: #4484c4;
+        font-family: ProximaNovaBold;
+    }
+}
+
+form {
+
+    .btn-default.submit-button {
+        background-color: #4484c4;
+        color: white;
+    }
+
+    .form-group.with-icon {
+        position: relative;
+        margin-bottom: 11px;
+    }
+
+    .control-icon-right {
+        top: 10px;
+        right: 10px;
+        position: absolute;
+        color: #c4c4c4;
+    }
+    input.form-control {
+        border: 1px solid #d0d0d0;
+        padding: 18px;
+
+    }
+    .submit-button {
+        background-color: #4484c4;
+        color: white;
+        text-align: center;
+        width: 100%;
+        font-size: 14px;
+        font-weight: bold;
+        margin-top: 8px;
+        padding: 8px;
+    }
+
+    /* todo:: change to autoprefixer */
+    .form-control::-moz-placeholder {
+      color: #5e5e5e;
+    }
+    .form-control:-ms-input-placeholder {
+      color: #5e5e5e;
+    }
+    .form-control::-webkit-input-placeholder {
+      color: #5e5e5e;
+    }
+
+    .form-control::placeholder {
+        color: #5e5e5e;
+    }
+}
+
+
+// .footer {
+//   position: absolute;
+//   bottom: 0;
+//   width: 100%;
+//   /* Set the fixed height of the footer here */
+//   height: 60px;
+
+// }
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 60px;
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    color: #fff;
+    width: 100%;
+    height: 100px;
+    line-height: 100px;
+    background-color: #000303;
+    margin-top: 70px;
+    padding-left: 150px;
+    padding-right: 150px;
+    font-family: 'FiraSansBold';
+    .nav-social > li > a {
+        color: white;
+        padding: 5px;
+    }
+    .nav-social {
+        margin-right: 0px;
+        margin-top: 33px;
+        .circle-icon {
+            border: 2px solid white;
+        }
+    }
+}
+
+.nav > li > a:hover {
+    background: none;
+}
+
+.navbar {
+    height: 80px;
+    line-height: 80px;
+    margin-bottom: 0px;
+
+    .navbar-header .navbar-brand {
+        margin-top: 15px;
+    }
+
+    .navbar-header .navbar-brand a{
+        font-size: 33px;
+        color: #373535;
+        &:hover {
+            text-decoration: none;
+        }
+    }
+    .navbar-right a {
+        color: #a0a1a1;
+    }
+    .become-tutor-btn {
+        background-color: #80c34f;
+        color: #fff;
+        font-family: 'FiraSansBold';
+    }
+    .nav-social {
+        margin-right: 20px;
+        margin-top: 15px;
+        padding-top: 5px;
+        a {
+            padding: 5px;
+        }
+    }
+    .nav-auth {
+        margin-top: 15px;
+        font-family: 'FiraSansBold';
+    }
+    .become-tutor-nav {
+        margin-right: 70px;
+        button {
+            font-size: 12px;
+        }
+    }
+}
+
+.flash-msg-container {
+    background-color: #e9e9ea;
+    color: #000;
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    font-family: ProximaNovaBold;
+    font-size: 16px;
+}
+
+.circle-icon {
+    display: inline-block;
+    width: 33px;
+    height: 33px;
+    border: 2px solid #a0a1a1;
+    border-radius: 30px;
+    line-height: 30px;
+    padding-left: 7px;
+}
+

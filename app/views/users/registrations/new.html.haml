@@ -5,15 +5,44 @@
 
 -# send a pull request when complete
 
+.reg-form-wrap
 
-%h2 Sign up
-= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
-  = f.error_notification
-  .form-inputs
-    = f.input :first_name
-    = f.input :last_name
-    = f.input :email
-    = f.input :password
-    = f.input :password_confirmation
-  .form-actions
-    = f.button :submit, "Sign up"
+  .form-header
+    %h2 Sign up
+    %span 
+      Have an account?
+      %a{:href=>"#"} Log in.
+  = simple_form_for(resource, as: resource_name, url: registration_path(resource_name),
+                    defaults: { label: false, input_html: { class: 'form-control' } }) do |f|
+    
+    / = f.error_notification
+    .form-group.with-icon
+      = f.input :first_name, type: 'text', placeholder: 'First name'
+      %i{class: 'glyphicon glyphicon-user control-icon-right'}
+    .form-group.with-icon
+      = f.input :last_name, type: 'text', placeholder: 'Last name'
+      %i{class: 'glyphicon glyphicon-user control-icon-right'}
+    .form-group.with-icon
+      = f.input :email, type: 'email', placeholder: 'Email'
+      %i{class: 'glyphicon glyphicon-envelope control-icon-right'}
+    .form-group.with-icon
+      = f.input :mobile_number, type: 'text', placeholder: 'Mobiles'
+      %i{class: 'glyphicon glyphicon-phone control-icon-right'}
+    .form-group.with-icon
+      = f.input :password, type: 'password', placeholder: 'Password'
+      %i{class: 'glyphicon glyphicon-lock control-icon-right'}
+
+    .form-actions
+      = f.button :submit, 'Next', class:'btn btn-default submit-button'
+
+
+      / = f.input :first_name
+      / = f.input :last_name
+      / = f.input :email
+      / = f.input :password
+      / = f.input :password_confirmation
+      / .form-actions
+      /   = f.button :submit, "Sign up"
+
+
+

@@ -1,4 +1,4 @@
-%nav.navbar.navbar-default
+%nav.navbar
   .container-fluid
     / Brand and toggle get grouped for better mobile display
     .navbar-header
@@ -6,11 +6,31 @@
         %span.sr-only Toggle navigation
 
       .navbar-brand= link_to "Brand Logo", root_path
+
     .collapse.navbar-collapse
 
-      %ul.nav.navbar-nav.navbar-right
+      
+
+      %ul.nav.navbar-nav.navbar-right.nav-auth
         - if current_user
           %li= link_to "Log out", destroy_user_session_path, method: :delete
         - else
           %li= link_to "Sign up", new_user_registration_path
-          %li= link_to "Sign in", new_user_session_path
+          %li= link_to "Log in", new_user_session_path
+
+
+      %ul.nav.navbar-nav.navbar-right.nav-social
+        %li
+          %a{:href=>"#"}
+            %i.circle-icon{:class=>"glyphicon glyphicon-user"}
+        %li
+          %a{:href=>"#"}
+            %i.circle-icon{:class=>"glyphicon glyphicon-earphone"}
+        %li
+          %a{:href=>"#"}
+            %i.circle-icon{:class=>"glyphicon glyphicon-envelope"}
+
+
+      %ul.nav.navbar-nav.navbar-right.become-tutor-nav
+        %li
+          %button.btn.btn-default.become-tutor-btn{:type => 'button'} Become a tutor
