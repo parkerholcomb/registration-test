@@ -4,12 +4,12 @@
     %title RegistrationTest
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    %meta(name="viewport" content="width=device-width, initial-scale=1.0")
     = csrf_meta_tags
   %body
     = render 'layouts/application_header'
-
-    -# TODO render flash messages partial
+    = render 'shared/flash'
 
     = yield
-
+    = render 'layouts/application_footer'
     -# TODO add footer

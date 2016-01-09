@@ -2,15 +2,26 @@
   .container-fluid
     / Brand and toggle get grouped for better mobile display
     .navbar-header
-      %button.navbar-toggle.collapsed{"aria-expanded" => "false", "data-target" => "#bs-example-navbar-collapse-1", "data-toggle" => "collapse", :type => "button"}
+      %button.navbar-toggle.collapsed{"aria-expanded" => "false", "data-target" => ".navbar-ex1-collapse", "data-toggle" => "collapse", :type => "button"}
         %span.sr-only Toggle navigation
+        %span.icon-bar
+        %span.icon-bar
+        %span.icon-bar
 
       .navbar-brand= link_to "Brand Logo", root_path
-    .collapse.navbar-collapse
 
+    .collapse.navbar-collapse.navbar-ex1-collapse
+      
       %ul.nav.navbar-nav.navbar-right
+
         - if current_user
           %li= link_to "Log out", destroy_user_session_path, method: :delete
         - else
           %li= link_to "Sign up", new_user_registration_path
           %li= link_to "Sign in", new_user_session_path
+      %div.navbar-nav.navbar-right.call-icons
+        %button.tutor{:type=>"button"}
+          Become a tutor
+        = link_to image_tag( 'info.svg'), 'http://www.facebook.com'
+        = link_to image_tag( 'phonecall.svg'), 'http://www.facebook.com'
+        = link_to image_tag( 'email.svg'), 'http://www.facebook.com'
