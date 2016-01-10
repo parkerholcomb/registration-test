@@ -1,8 +1,18 @@
-%h2 Log in
-= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
-  .form-inputs
-    = f.input :email, required: false, autofocus: true
-    = f.input :password, required: false
-    = f.input :remember_me, as: :boolean if devise_mapping.rememberable?
-  .form-actions
-    = f.button :submit, "Log in"
+.container
+  .row
+    .col-xs-12.col-sm-8.col-md-6.col-sm-offset-2.col-md-offset-3
+      = simple_form_for(resource, :as => resource_name, :url => session_path(resource_name), :html => { :role => 'form'}) do |f|
+        %h3 Sign in
+        .form-group
+          = f.email_field :email, :autofocus => true, class: 'form-control'
+        .form-group
+          = f.password_field :password, class: 'form-control'
+        = f.submit 'Sign in', :class => 'btn btn-primary'
+        .form-group
+          - if devise_mapping.registerable?
+            = link_to 'Sign up', new_registration_path(resource_name)
+        -# .form-group
+        -#   - if devise_mapping.recoverable?
+        -#     = link_to "Forgot password?", new_password_path(resource_name)
+        -# .form-group
+        -#   = link_to "Email Confirmation", new_user_confirmation_path(resource_name)
